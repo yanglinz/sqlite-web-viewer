@@ -1,0 +1,8 @@
+{
+  "name": "sqlite-web-viewer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:yanglinz/sqlite-web-viewer.git",
+  "author": "Yanglin Zhao <yz1876@gmail.com>",
+  "license": "MIT"
+}
