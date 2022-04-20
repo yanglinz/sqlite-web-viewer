@@ -1,4 +1,4 @@
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 import Root from "./components/Root";
 
 function ready(fn) {
@@ -10,7 +10,8 @@ function ready(fn) {
 }
 
 function init() {
-  ReactDOM.createRoot(document.getElementById("root")).render(<Root />);
+  const el = document.getElementById("root");
+  ReactDOM.createRoot(el).render(<Root />);
 }
 
 ready(init);
