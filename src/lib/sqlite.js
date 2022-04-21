@@ -1,12 +1,14 @@
 const initSqlJs = window.initSqlJs;
 
-export function debugDB() {
-  const sqlite = initSqlJs({
+export function sqlite() {
+  return initSqlJs({
     locateFile: () =>
       "https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.2/sql-wasm.wasm",
   });
+}
 
-  sqlite.then(function (SQL) {
+export function debugDB() {
+  sqlite().then(function (SQL) {
     const db = new SQL.Database();
 
     db.run("CREATE TABLE test (col1, col2);");

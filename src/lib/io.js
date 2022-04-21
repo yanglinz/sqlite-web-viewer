@@ -1,13 +1,16 @@
-export async function saveFile() {
-  // create a new handle
+export async function loadDB() {
+  const handle = await window.showOpenFilePicker();   
+  const fsHandle = handle[0];
+  const fileData = await fsHandle.getFile();
+
+  // TODO: Load file data
+
+  console.log(fileData);
+}
+
+export async function saveDB() {
   const newHandle = await window.showSaveFilePicker();
-
-  // create a FileSystemWritableFileStream to write to
   const writableStream = await newHandle.createWritable();
-
-  // write our file
-  await writableStream.write("Hello world!");
-
-  // close the file and write the contents to disk.
+  await writableStream.write("Hello world!");  // TODO: Contents of DB
   await writableStream.close();
 }

@@ -1,8 +1,6 @@
 import ReactDOM from "react-dom/client";
 import Root from "./components/Root";
 
-import { debugDB } from "./lib/sqlite";
-
 function ready(fn) {
   if (document.readyState != "loading") {
     fn();
@@ -12,8 +10,6 @@ function ready(fn) {
 }
 
 function init() {
-  debugDB();
-
   const el = document.getElementById("root");
   ReactDOM.createRoot(el).render(<Root />);
 }
